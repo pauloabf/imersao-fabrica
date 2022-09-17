@@ -12,7 +12,7 @@ def home(request):
 
 
 def create(request):
-    form = FormularioPostagem(request.POST or None)
+    form = FormularioPostagem(request.POST or None, request.FILES or None)
     data = {}
     data['form'] = form
 
@@ -33,7 +33,7 @@ def leitura_postagem(request, pk):
 
 def update(request, pk):
     postagem = Postagem.objects.get(pk=pk)
-    form = FormularioPostagem(request.POST or None, instance=postagem)
+    form = FormularioPostagem(request.POST or None,request.FILES or None, instance=postagem)
     data = {}
     data['postagem'] = postagem
     data['form'] = form

@@ -6,4 +6,4 @@ class FormularioPostagem(ModelForm):
 
     class Meta:
         model = Postagem
-        fields = ['titulo', 'conteudo']
+        fields = ['titulo', 'conteudo', 'post_imagem']

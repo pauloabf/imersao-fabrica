@@ -10,7 +10,13 @@
     <h1>{{ postagem.titulo }}</h1>
     <br>
     <p>{{ postagem.conteudo }}</p>
+    <br>
+    {% if postagem.post_imagem %}
+    <img src={{ postagem.post_imagem.url }} width=500>
+    {% endif %}
+
     <br><br><form action="{% url 'update' postagem.id %}"><input type="submit" value="Update" /></form>
     <br><form action="{% url 'home' %}"><input type="submit" value="Back" /></form>
 </body>
+
 </html>
